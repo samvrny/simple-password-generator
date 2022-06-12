@@ -40,14 +40,43 @@ function passwordOptions() {
   passwordLength = parseInt(prompt("How many characters would you like your password to be? Please select a number between 8 - 128"));
     if (isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8) {
       window.alert("You must pick a number between 8 - 128. Try again.");
+      passwordOptions();
       //I need to know here how to make this question loop back to ask it again.
     }
   //figure out if .concat is necessary to make this all work/password will generate randomly
+  //ask how to incorporate all of the characters into the proper order/and make sure they 
+  //will all generate. i.e. the selected characters will correctly generate
+  //is there a more simple way to write all of this code out? AKA to make the confirmations 
+  //register and be used without having to type out an insane amount of code?
   if (useLower) {
     selectedChars = lowerCase;
   }
   else if (useLower && useUpper) {
-    slectedChars = lowerCase.concat(upperCase);
+    selectedChars = lowerCase, upperCase;
+  }
+  else if (useLower && useNumbers) {
+    selectedChars = lowerCase, numbers;
+  }
+  else if (useLower && useCharacters) {
+    selectedChars = lowerCase, symbols;
+  }
+  else if (useLower && useUpper && useNumbers) {
+    selectedChars = lowerCase, upperCase, numbers
+  }
+  else if (useLower && useUpper && useCharacters) {
+    selectedChars = lowerCase, upperCase, symbols;
+  }
+  else if (useLower && useCharacters && useNumbers) {
+    selectedChars = lowerCase, numbers, symbols;
+  }
+  else if (useLower && useUpper && useNumbers && useCharacters) {
+    selectedChars = lowerCase, upperCase, numbers, symbols;
+  }
+  else if (useUpper) {
+    selectedChars = upperCase;
+  }
+  else if (useUpper && useNumbers) {
+    selectedChars = upperCase, numbers;
   }
 
 };
