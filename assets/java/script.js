@@ -14,14 +14,13 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 };
 
-//this will be the generatePassword function
 //This is where I will need a lot of help. Need to basically make the inputs from password
-//Options plug in here to spit out a password.
-function generatePassword () {
-  passwordOptions();
+//Options plug in here to spit out a password. How do I call the options i've written to 
+//make them generate the password here?
+function generatePassword() {
+  
 }
 
 function passwordOptions() {
@@ -95,4 +94,5 @@ function passwordOptions() {
   else if (useCharacters) {
     selectedChars = symbols;
   }
+  generatePassword(); // does this call the generate password? Kind of need it to.
 }; // end of passwordOptions function
