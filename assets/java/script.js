@@ -48,6 +48,8 @@ function passwordOptions() {
   //will all generate. i.e. the selected characters will correctly generate
   //is there a more simple way to write all of this code out? AKA to make the confirmations 
   //register and be used without having to type out an insane amount of code?
+
+  //If I write it out this way, do I also have to write out all the code for false values?
   if (useLower) {
     selectedChars = lowerCase;
   }
@@ -61,7 +63,7 @@ function passwordOptions() {
     selectedChars = lowerCase, symbols;
   }
   else if (useLower && useUpper && useNumbers) {
-    selectedChars = lowerCase, upperCase, numbers
+    selectedChars = lowerCase, upperCase, numbers;
   }
   else if (useLower && useUpper && useCharacters) {
     selectedChars = lowerCase, upperCase, symbols;
@@ -78,5 +80,19 @@ function passwordOptions() {
   else if (useUpper && useNumbers) {
     selectedChars = upperCase, numbers;
   }
-
-};
+  else if (useUpper && useCharacters) {
+    selectedChars = upperCase, symbols;
+  }
+  else if (useUpper && useNumbers && useCharacters) {
+    selectedChars = upperCase, numbers, symbols;
+  }
+  else if (useNumbers) {
+    selectedChars = numbers;
+  }
+  else if (useNumbers && useCharacters) {
+    selectedChars = numbers, symbols;
+  }
+  else if (useCharacters) {
+    selectedChars = symbols;
+  }
+}; // end of passwordOptions function
