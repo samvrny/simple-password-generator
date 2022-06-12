@@ -18,16 +18,15 @@ function writePassword() {
 };
 
 //this will be the generatePassword function
+//This is where I will need a lot of help. Need to basically make the inputs from password
+//Options plug in here to spit out a password.
 function generatePassword () {
   passwordOptions();
 }
 
-//This will be the function for determining the length of the password, and which
-//characters to use. function to be named "passwordOptions"
-//Change this function later to be the passwordOptions, and add a separate function to 
-//generate the password so it passes on properly to write password.
-
 function passwordOptions() {
+  //later on add alerts as to whether you are confirming yes or no to these questions
+  //also need to add a description of what questions will be asked by the user?
    var useLower = window.confirm("Would you like to use lowercase letters in your password?");
    var useUpper = window.confirm("Would you like to use uppercase letters?");
    var useNumbers = window.confirm("Would you like to use numbers?");
@@ -38,12 +37,17 @@ function passwordOptions() {
     passwordOptions();
   }
 
-  var passwordLength = parseInt(prompt("How many characters would you like your password to be? Please select a number between 8 - 128"));
+  passwordLength = parseInt(prompt("How many characters would you like your password to be? Please select a number between 8 - 128"));
     if (isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8) {
       window.alert("You must pick a number between 8 - 128. Try again.");
-      //I need to know here for to make this question loop back to ask it again.
-      //For some reason this question is being asked twice, even with the correct
-      //Answer. The second time it goes through. Need to know why?
+      //I need to know here how to make this question loop back to ask it again.
     }
+  //figure out if .concat is necessary to make this all work/password will generate randomly
+  if (useLower) {
+    selectedChars = lowerCase;
+  }
+  else if (useLower && useUpper) {
+    slectedChars = lowerCase.concat(upperCase);
+  }
 
 };
