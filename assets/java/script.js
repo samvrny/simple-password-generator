@@ -28,6 +28,12 @@ function generatePassword() {
     window.alert("You must pick a number between 8 - 128. Try again.");
     generatePassword();
   }
+   var useLower = window.confirm("Would you like to use lowercase letters in your password?");
+   var useUpper = window.confirm("Would you like to use uppercase letters?");
+   var useNumbers = window.confirm("Would you like to use numbers?");
+   var useCharacters = window.confirm("Would you like to use special characters?");
+
+   
 };
 
 generatePassword();
