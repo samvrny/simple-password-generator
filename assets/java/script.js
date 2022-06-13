@@ -37,9 +37,33 @@ function passwordOptions() {
   //later on add alerts as to whether you are confirming yes or no to these questions
   //also need to add a description of what questions will be asked by the user?
    var useLower = window.confirm("Would you like to use lowercase letters in your password?");
+    if (useLower) {
+      window.alert("Your password will have lowercase letters.");
+    }
+    else if (!useLower) {
+      window.alert("Your password will not have lowercase letters.");
+    }
    var useUpper = window.confirm("Would you like to use uppercase letters?");
+    if (useUpper) {
+      window.alert("Your password will have uppercase letters.");
+    }
+    else if (!useUpper) {
+      window.alert("Your password will not have uppercase letters.");
+    }
    var useNumbers = window.confirm("Would you like to use numbers?");
+   if (useNumbers) {
+    window.alert("Your password will have numbers.");
+   }
+   else if (!useNumbers) {
+    window.alert("Your password will not have numbers.");
+   }
    var useCharacters = window.confirm("Would you like to use special characters?");
+   if (useCharacters) {
+    window.alert("Your password will have special characters");
+   }
+   else if (!useCharacters) {
+    window.alert("Your password will not have special characters.");
+   }
  
   if (!useLower && !useUpper && !useNumbers && !useCharacters) {
     window.alert("You must confirm you would like to use one or more character types to use in your password.");
@@ -52,10 +76,9 @@ function passwordOptions() {
       passwordOptions();
       //I need to know here how to make this question loop back to ask it again.
     }
- //NOTE TO SELF: THe "Basket" That is selectedChars is just being filled
- //by the inputs from here. There doesn't need to be else if's, because each
- //prompt that is confirmed "fills" the "selectedChars basket" with the corresponding
- //Array. each one that is not confirmed is ignored.
+    else if (passwordLength >= 8 || passwordLength <= 128)
+      window.alert("Your password will have " + passwordLength + " characters in it.");
+      
     if (useLower) {
       selectedChars = selectedChars.concat(lowerCase);
     }
