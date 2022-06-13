@@ -3,12 +3,14 @@ var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var symbols = ["!","@","#","$","%","^","&","*","(",")","+","_","{","}","/","?","<",">","|","=","-"];
 var numbers = ["1","2","3","4","5","6","7","8","9","0"];
+var selectedChars= [];
+var passwordLength;
+var basket = "";
 
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -16,12 +18,20 @@ function writePassword() {
   passwordText.value = password;
 };
 
-//This is where I will need a lot of help. Need to basically make the inputs from password
-//Options plug in here to spit out a password. How do I call the options i've written to 
-//make them generate the password here?
 function generatePassword() {
-  
-}
+  passwordOptions();
+  //remove these console logs before submission as they will not be needed.
+  console.log(selectedChars);
+  console.log(passwordLength);
+
+  for (i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * selectedChars.length);
+    var randomChar = selectedChars[randomIndex];
+    console.log(randomChar);
+    basket += randomChar;
+  }
+  return basket;
+}; 
 
 function passwordOptions() {
   //later on add alerts as to whether you are confirming yes or no to these questions
@@ -42,57 +52,20 @@ function passwordOptions() {
       passwordOptions();
       //I need to know here how to make this question loop back to ask it again.
     }
-  //figure out if .concat is necessary to make this all work/password will generate randomly
-  //ask how to incorporate all of the characters into the proper order/and make sure they 
-  //will all generate. i.e. the selected characters will correctly generate
-  //is there a more simple way to write all of this code out? AKA to make the confirmations 
-  //register and be used without having to type out an insane amount of code?
-
-  //If I write it out this way, do I also have to write out all the code for false values?
-  if (useLower) {
-    selectedChars = lowerCase;
-  }
-  else if (useLower && useUpper) {
-    selectedChars = lowerCase, upperCase;
-  }
-  else if (useLower && useNumbers) {
-    selectedChars = lowerCase, numbers;
-  }
-  else if (useLower && useCharacters) {
-    selectedChars = lowerCase, symbols;
-  }
-  else if (useLower && useUpper && useNumbers) {
-    selectedChars = lowerCase, upperCase, numbers;
-  }
-  else if (useLower && useUpper && useCharacters) {
-    selectedChars = lowerCase, upperCase, symbols;
-  }
-  else if (useLower && useCharacters && useNumbers) {
-    selectedChars = lowerCase, numbers, symbols;
-  }
-  else if (useLower && useUpper && useNumbers && useCharacters) {
-    selectedChars = lowerCase, upperCase, numbers, symbols;
-  }
-  else if (useUpper) {
-    selectedChars = upperCase;
-  }
-  else if (useUpper && useNumbers) {
-    selectedChars = upperCase, numbers;
-  }
-  else if (useUpper && useCharacters) {
-    selectedChars = upperCase, symbols;
-  }
-  else if (useUpper && useNumbers && useCharacters) {
-    selectedChars = upperCase, numbers, symbols;
-  }
-  else if (useNumbers) {
-    selectedChars = numbers;
-  }
-  else if (useNumbers && useCharacters) {
-    selectedChars = numbers, symbols;
-  }
-  else if (useCharacters) {
-    selectedChars = symbols;
-  }
-  generatePassword(); // does this call the generate password? Kind of need it to.
-}; // end of passwordOptions function
+ //NOTE TO SELF: THe "Basket" That is selectedChars is just being filled
+ //by the inputs from here. There doesn't need to be else if's, because each
+ //prompt that is confirmed "fills" the "selectedChars basket" with the corresponding
+ //Array. each one that is not confirmed is ignored.
+    if (useLower) {
+      selectedChars = selectedChars.concat(lowerCase);
+    }
+    if (useUpper) {
+      selectedChars = selectedChars.concat(upperCase);
+    }
+    if (useNumbers) {
+      selectedChars = selectedChars.concat(numbers);
+    }
+    if (useCharacters) {
+      selectedChars = selectedChars.concat(symbols);
+    }
+}; //End of password options function
