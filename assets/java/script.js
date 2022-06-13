@@ -11,6 +11,7 @@ var basket = "";
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
+//write the password to the page
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -18,24 +19,19 @@ function writePassword() {
   passwordText.value = password;
 }; //end of writePassword function
 
+//use the selected characters to randomly generate a passowrd 
 function generatePassword() {
   passwordOptions();
-  //remove these console logs before submission as they will not be needed.
-  console.log(selectedChars);
-  console.log(passwordLength);
-
   for (i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * selectedChars.length);
     var randomChar = selectedChars[randomIndex];
-    console.log(randomChar);
     basket += randomChar;
   }
   return basket;
 }; //end generatePassword function
 
+//pick which characters to use
 function passwordOptions() {
-  //later on add alerts as to whether you are confirming yes or no to these questions
-  //also need to add a description of what questions will be asked by the user?
    var useLower = window.confirm("Would you like to use lowercase letters in your password?");
     if (useLower) {
       window.alert("Your password will have lowercase letters.");
@@ -69,12 +65,11 @@ function passwordOptions() {
     window.alert("You must confirm you would like to use one or more character types to use in your password.");
     passwordOptions();
   }
-
+//select length of password
   passwordLength = parseInt(prompt("How many characters would you like your password to be? Please select a number between 8 - 128"));
     if (isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8) {
       window.alert("You must pick a number between 8 - 128. Try again.");
       passwordOptions();
-      //I need to know here how to make this question loop back to ask it again.
     }
     else if (passwordLength >= 8 || passwordLength <= 128)
       window.alert("Your password will have " + passwordLength + " characters in it.");
