@@ -16,7 +16,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-};
+}; //end of writePassword function
 
 function generatePassword() {
   passwordOptions();
@@ -31,7 +31,7 @@ function generatePassword() {
     basket += randomChar;
   }
   return basket;
-}; 
+}; //end generatePassword function
 
 function passwordOptions() {
   //later on add alerts as to whether you are confirming yes or no to these questions
@@ -68,4 +68,4 @@ function passwordOptions() {
     if (useCharacters) {
       selectedChars = selectedChars.concat(symbols);
     }
-}; //End of password options function
+}; //End of passwordOptions function
