@@ -21,6 +21,8 @@ function writePassword() {
 
 //use the selected characters to randomly generate a passowrd 
 function generatePassword() {
+  basket = "";
+  selectedChars = [];
   passwordOptions();
   for (i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * selectedChars.length);
