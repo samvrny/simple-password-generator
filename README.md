@@ -12,7 +12,9 @@ This is a simple password generator that can be used to come up with hard to cra
 
 https://samvrny.github.io/a-simple-password-generator/
 
-!["Here is a look at the finished webpage!"](./assets/images/passwordpicture.png)
+Here is a look at the finished webpage!
+
+![](./assets/images/passwordpicture.png)
 
 ## Contribution
 Made by Samuel Varney
