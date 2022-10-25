@@ -16,7 +16,7 @@ function writePassword() {
   let password = generatePassword();
   let passwordText = document.querySelector("#password");
 
-  passwordText.innerHTML = password;
+  passwordText.textContent = password;
 };
 
 //select what characters are going to be used in the password
