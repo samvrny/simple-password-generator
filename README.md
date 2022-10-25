@@ -15,7 +15,7 @@ You can visit the application here: [Password Generator](https://samvrny.github.
 
 Here is a look at the finished webpage:
 
-![](./assets/images/generator.png)
+![](./assets/images/generator1.png)
 
 ## Contribution
 Made by Samuel Varney
