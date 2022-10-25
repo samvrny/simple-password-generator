@@ -1,4 +1,4 @@
-//Arrays for all characters that are selectable by the password generator
+//arrays for all characters that are selectable by the password generator
 let lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "_", "{", "}", "/", "?", "<", ">", "|", "=", "-"];
@@ -7,7 +7,7 @@ let selectedChars = [];
 let passwordLength;
 let basket = "";
 
-// Add event listener to generate button
+//add event listener to generate button
 const generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
@@ -17,24 +17,9 @@ function writePassword() {
   let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-}; //end of writePassword function
-
-//use the selected characters to randomly generate a passowrd
-function generatePassword() {
-  basket = "";
-  selectedChars = [];
-  passwordOptions();
-  console.log(selectedChars);
-  
-    for (i = 0; i < passwordLength; i++) {
-      const randomIndex = Math.floor(Math.random() * selectedChars.length);
-      const randomChar = selectedChars[randomIndex];
-      basket += randomChar;
-    }
-    return basket;
-  
 };
 
+//select what characters are going to be used in the password
 let useUpper = false;
 const upperCaseInput = document.getElementById("upper");
 upperCaseInput.addEventListener("change", function () {
@@ -50,7 +35,7 @@ lowerCaseInput.addEventListener("change", function () {
 
 let useNumbers = false;
 const numberInput = document.getElementById("number");
-upperCaseInput.addEventListener("change", function () {
+numberInput.addEventListener("change", function () {
   useNumbers = !useNumbers;
 });
 
@@ -60,17 +45,39 @@ specialInput.addEventListener("change", function () {
   useCharacters = !useCharacters;
 });
 
-//pick which characters to use
-function passwordOptions() {
-  //select length of password
-  passwordLength = parseInt(prompt("How many characters would you like your password to be? Please select a number between 8 - 128"));
-  if (isNaN(passwordLength) || passwordLength > 128 || passwordLength < 8) {
-    window.alert("You must pick a number between 8 - 128. Try again.");
-    passwordOptions();
+//use the selected characters to randomly generate a passowrd
+function generatePassword() {
+  basket = "";
+  selectedChars = [];
+  passwordOptions();
+  for (i = 0; i < passwordLength; i++) {
+    const randomIndex = Math.floor(Math.random() * selectedChars.length);
+    const randomChar = selectedChars[randomIndex];
+    basket += randomChar;
   }
-  else if (passwordLength >= 8 || passwordLength <= 128)
-    window.alert("Your password will have " + passwordLength + " characters in it.");
+  return basket;
+};
 
+function passwordOptions() {
+  //make sure at least one character type is selected
+  if (!useCharacters && !useLower && !useNumbers && !useUpper) {
+    window.alert("You must select some characters to use in your password");
+    return;
+  }
+  
+  //select length of password
+  const howMany = document.getElementById('how-many');
+  console.log(howMany.value)
+  passwordLength = howMany.value;
+
+  //make sure the password is between 8 and 128 characters
+  if(passwordLength < 8 || passwordLength > 128) {
+    window.alert("Your password must be between 8 and 128 characters");
+    passwordLength = 0;
+    return;
+  }
+
+  //compile all of the selected character types into the selectedChars array
   if (useLower) {
     selectedChars = selectedChars.concat(lowerCase);
   }
