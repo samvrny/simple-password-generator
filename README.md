@@ -1,4 +1,4 @@
-# A Simple Password Generator
+# Simple Password Generator
 
 ## Purpose
 Simple password generator to make it easy for a user so come up with random passwords. The user can select from four 
