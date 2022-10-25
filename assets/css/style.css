@@ -98,6 +98,11 @@ textarea {
   display: none;
 }
 
+.flex p {
+  color: hsl(360, 91%, 36%);
+  font-weight: 600;
+}
+
 .flex {
   display: flex;
   flex-direction: column;

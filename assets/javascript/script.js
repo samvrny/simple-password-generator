@@ -52,6 +52,7 @@ function generatePassword() {
   selectedChars = [];
   hide1.classList.add("hide")
   hide2.classList.add("hide")
+  passwordLength = 0;
   passwordOptions();
   for (i = 0; i < passwordLength; i++) {
     const randomIndex = Math.floor(Math.random() * selectedChars.length);
