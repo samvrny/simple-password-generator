@@ -1,7 +1,9 @@
 # A Simple Password Generator
 
 ## Purpose
-This is a simple password generator that can be used to come up with hard to crack passwords using any combination of upper or lower case letters, numbers, and special characters. The user only has to select which characters they would like to use and the length of their password, and the generator will give them the results based on their inputs!
+Simple password generator to make it easy for a user so come up with random passwords. The user can select from four 
+character types: uppercase letters, lowercase letters, numbers, and special characters. The user can also select how many 
+digits will be in their password (between 8-128).
 
 ## Built With
 * HTML
@@ -9,12 +11,11 @@ This is a simple password generator that can be used to come up with hard to cra
 * JavaScript
 
 ## Website
+You can visit the application here: [Password Generator](https://samvrny.github.io/a-simple-password-generator/)
 
-https://samvrny.github.io/a-simple-password-generator/
+Here is a look at the finished webpage:
 
-Here is a look at the finished webpage!
-
-![](./assets/images/passwordpicture.png)
+![](./assets/images/generator.png)
 
 ## Contribution
 Made by Samuel Varney
