@@ -71,26 +71,32 @@ header {
   margin-bottom: 10px;
   border: 3px solid #c0c7cf;
   border-radius: 6px;
-  height: 120px;
+  height: 100px;
   overflow: auto;
 }
 
 #password {
   resize: none;
   height: 60%;
-  width: 100%;
+  width: 80%;
   border: none;
+  margin: auto;
   text-align: center;
   outline: none;
-  margin-top: auto;
   font-weight: 30px;
 }
 
 textarea {
+  display: flex;
+  align-items: center;
   font-size: 18px;
   font-family: sans-serif;
   color: hsl(206, 17%, 28%);
 }
+
+/* textarea::-webkit-scrollbar {
+  display: none;
+} */
 
 .flex {
   display: flex;
