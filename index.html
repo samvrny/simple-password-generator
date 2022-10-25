@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-  </head>
-  <body>
-    <!--password generator-->
-    <section class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <section class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
+ 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+ 
+<body>
+  <!--password generator-->
+  <section class="wrapper">
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <section class="card">
+      <div class="card-header">
+        <h2>Generate a Password</h2>
+      </div>
+      <div class="card-body">
+        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+      </div>
+      <div class="radio-buttons">
+        <div>
+          <label for="upper">Use Uppercase Letters</label>
+          <input id="upper" name="upper" type="checkbox" />
         </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+        <div>
+          <label for="lower">Use Lowercase Letters</label>
+          <input id="lower" name="lower" type="checkbox" />
         </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+        <div>
+          <label for="number">Use Numbers</label>
+          <input id="number" name="number" type="checkbox" />
         </div>
-      </section>
+        <div>
+          <label for="special">Use Special Characters</label>
+          <input id="special" name="special" type="checkbox" />
+        </div>
+      </div>
+      <div class="card-footer">
+        <button id="generate" class="btn">Generate Password</button>
+      </div>
     </section>
-    <!--end password generator-->
-    <!--JavaScript file that runs the generator-->
-    <script src="./assets/java/script.js"></script>
-  </body>
+  </section>
+  <!--end password generator-->
+  <!--JavaScript file that runs the generator-->
+  <script src="./assets/java/script.js"></script>
+</body>
+ 
 </html>
