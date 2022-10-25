@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
   <title>Password Generator</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
- 
+
 <body>
   <!--password generator-->
   <section class="wrapper">
@@ -20,41 +20,44 @@
         <h2>Generate a Password</h2>
       </div>
       <div class="card-body">
-        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+        <div class="border-box">
+          <p id="password"></p>
+        </div>
       </div>
-      <div class="radio-buttons">
-        <div>
+      <section class="radio-buttons flex">
+        <div class="">
           <label for="how-many">
-            How many characters would you like your password to have? Please 
-            select a number between 8-12.
+            How many characters would you like your password to have? Please
+            enter a number between 8-12:
           </label>
           <input id="how-many" name="how-many" type="text" />
         </div>
-        <div>
+        <div class="flex-reverse">
           <label for="upper">Use Uppercase Letters</label>
-          <input id="upper" name="upper" type="checkbox" />
+          <input class="input" id="upper" name="upper" type="checkbox" />
         </div>
-        <div>
+        <div class="flex-reverse">
           <label for="lower">Use Lowercase Letters</label>
-          <input id="lower" name="lower" type="checkbox" />
+          <input class="input" id="lower" name="lower" type="checkbox" />
         </div>
-        <div>
+        <div class="flex-reverse">
           <label for="number">Use Numbers</label>
-          <input id="number" name="number" type="checkbox" />
+          <input class="input" id="number" name="number" type="checkbox" />
         </div>
-        <div>
+        <div class="flex-reverse">
           <label for="special">Use Special Characters</label>
-          <input id="special" name="special" type="checkbox" />
+          <input class="input" id="special" name="special" type="checkbox" />
         </div>
-      </div>
+      </section>
       <div class="card-footer">
         <button id="generate" class="btn">Generate Password</button>
       </div>
     </section>
+    <footer></footer>
   </section>
   <!--end password generator-->
   <!--JavaScript file that runs the generator-->
   <script src="./assets/java/script.js"></script>
 </body>
- 
+
 </html>
