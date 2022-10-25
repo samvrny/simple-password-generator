@@ -6,6 +6,8 @@ let numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 let selectedChars = [];
 let passwordLength;
 let basket = "";
+let hide1 = document.getElementById("hide1");
+let hide2 = document.getElementById("hide2");
 
 //add event listener to generate button
 const generateBtn = document.querySelector("#generate");
@@ -14,8 +16,8 @@ generateBtn.addEventListener("click", writePassword);
 //write the password to the page
 function writePassword() {
   let password = generatePassword();
-  let passwordText = document.querySelector("#password");
 
+  let passwordText = document.querySelector("#password");
   passwordText.textContent = password;
 };
 
@@ -24,7 +26,6 @@ let useUpper = false;
 const upperCaseInput = document.getElementById("upper");
 upperCaseInput.addEventListener("change", function () {
   useUpper = !useUpper;
-  console.log("apple", useUpper)
 });
 
 let useLower = false;
@@ -49,6 +50,8 @@ specialInput.addEventListener("change", function () {
 function generatePassword() {
   basket = "";
   selectedChars = [];
+  hide1.classList.add("hide")
+  hide2.classList.add("hide")
   passwordOptions();
   for (i = 0; i < passwordLength; i++) {
     const randomIndex = Math.floor(Math.random() * selectedChars.length);
@@ -61,18 +64,17 @@ function generatePassword() {
 function passwordOptions() {
   //make sure at least one character type is selected
   if (!useCharacters && !useLower && !useNumbers && !useUpper) {
-    window.alert("You must select some characters to use in your password");
+    hide1.classList.remove("hide")
     return;
   }
-  
+
   //select length of password
-  const howMany = document.getElementById('how-many');
-  console.log(howMany.value)
+  const howMany = document.getElementById("how-many");
   passwordLength = howMany.value;
 
   //make sure the password is between 8 and 128 characters
-  if(passwordLength < 8 || passwordLength > 128) {
-    window.alert("Your password must be between 8 and 128 characters");
+  if (passwordLength < 8 || passwordLength > 128) {
+    hide2.classList.remove("hide");
     passwordLength = 0;
     return;
   }

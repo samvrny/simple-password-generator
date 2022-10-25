@@ -94,9 +94,9 @@ textarea {
   color: hsl(206, 17%, 28%);
 }
 
-/* textarea::-webkit-scrollbar {
+.hide {
   display: none;
-} */
+}
 
 .flex {
   display: flex;
