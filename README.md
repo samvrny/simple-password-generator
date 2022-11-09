@@ -11,7 +11,7 @@ digits will be in their password (between 8-128).
 * JavaScript
 
 ## Website
-You can visit the application here: [Password Generator](https://samvrny.github.io/a-simple-password-generator/)
+You can visit the application here: [Password Generator](https://samvrny.github.io/simple-password-generator/)
 
 Here is a look at the finished webpage:
 
